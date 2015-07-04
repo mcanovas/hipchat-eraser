@@ -14,6 +14,8 @@ The command to launch the process is the following:
 
 Where:
 
- - \<your-hipchar-host\> Depending on which is your company the host changes. It makes that the script won't work. It is easy to know with is the host to write here:
- 1. Login to hipchat.
- 2. Get the part of the address of the host. For instance, if the url is **https://google.hipchat.com/history/member**, the right host is **google.hipchat.com**
+ * \<your-hipchar-host\> Depending on which is your company the host changes. It makes that the script won't work. 
+
+ It is easy to know with is the host to write here:
+ ** Login to hipchat.
+ ** Get the part of the address of the host. For instance, if the url is **https://google.hipchat.com/history/member**, the right host is **google.hipchat.com**
