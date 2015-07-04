@@ -25,3 +25,5 @@ Where:
  	It is easy to know with is the host to write here:
  	* Login to hipchat.
  	* Get the part of the address of the host. For instance, if the url is **https://google.hipchat.com/history/member**, the right host is **google.hipchat.com**
+
+ * **\<date-until-delete\>**: **Hipchat Eraser** deletes the messages from today until the date provided in this parameter. It **MUST** be written in a specific format (**yyyy-MM-dd**). For instance: 2015-12-24
