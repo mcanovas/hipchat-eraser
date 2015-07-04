@@ -6,7 +6,8 @@ require("utils").dump(casper.cli.args);
 
 var strDate = "";
 var messagesURL = "";
-var dest = casper.cli.get(2);
+var dest = casper.cli.get(3);
+var host = casper.cli.get(0);
 
 var currentUrl = 0;
 
@@ -14,11 +15,11 @@ var urls = [];
 
 var running = false;
 
-casper.start('https://kingcom.hipchat.com/sign_in', function() {
+casper.start('https://' + host + '/sign_in', function() {
 	this.echo("Logging to Hipchat");
 	this.fill('form[name="signin"]', {
-		email: casper.cli.get(0),
-		password: casper.cli.get(1)
+		email: casper.cli.get(1),
+		password: casper.cli.get(2)
 	}, true);
 });
 
@@ -31,7 +32,7 @@ var generateHistoryUrl = function(date) {
 	var month = pad(date.getMonth() + 1);
 
 	strDate = date.getFullYear() + "/" + month + "/" + day;
-	return "https://kingcom.hipchat.com/history/member/" + dest + "/" + strDate;
+	return "https://" + host + "/history/member/" + dest + "/" + strDate;
 };
 
 var previousDay = function(currentDate) {
@@ -52,7 +53,7 @@ var datesEquals = function (date1, date2) {
 function generateHistory() {
 	this.echo("Generating history");
 	var today = new Date();
-	var finalDate = new Date(casper.cli.get(3));
+	var finalDate = new Date(casper.cli.get(4));
 	var i = 0;
 	var url = generateHistoryUrl(today);
 	this.echo("Generating history: " + url);
