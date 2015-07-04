@@ -14,7 +14,7 @@ The command to launch the process is the following:
 
 Where:
 
- * \<your-hipchar-host\> Depending on which is your company the host changes. It makes that the script won't work. 
+ * **\<your-hipchar-host\>**: Depending on which is your company the host changes. It makes that the script won't work. 
 
  	It is easy to know with is the host to write here:
  	* Login to hipchat.
