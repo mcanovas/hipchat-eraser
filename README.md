@@ -4,7 +4,7 @@ This is a script done in CasperJs which deletes the 1-1 hipchat messages between
 
 ## Download
 
-[Hipchat Eraser 1.0.0](https://github.com/mcanovas/hipchat-eraser/archive/1.0.0.zip)
+[Hipchat Eraser 1.0.1](https://github.com/mcanovas/hipchat-eraser/archive/1.0.1.zip)
 
 ## Dependencies
 
