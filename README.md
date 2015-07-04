@@ -10,4 +10,4 @@ The source code is done using CasperJS which is a wrapper of PhantomJS. That's w
 
 The command to launch the process is the following:
 
-./start.sh <your-hipchat-host> <hipchat-username> <hipchat-password> <the-other-user-hipchat-id> <date-until-delete>
+./start.sh \<your-hipchat-host\> \<hipchat-username\> \<hipchat-password\> \<the-other-user-hipchat-id\> \<date-until-delete\>
