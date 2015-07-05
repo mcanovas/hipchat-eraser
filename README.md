@@ -1,4 +1,4 @@
-# hipchat-eraser
+# Hipchat Eraser
 
 This is a script done in CasperJs which deletes the 1-1 hipchat messages between the user who is log in and the user id provided. The period of time to delete message is from the today to the date provided.
 
@@ -13,6 +13,8 @@ The start.sh script uses **nmp**. It is important to install this executable bef
 The source code is done using CasperJS which is a wrapper of PhantomJS. That's why is important to install PhantomJS with **npm**.
 
 ## How to use it
+
+Download the zip file which link is above this comment, unzip it, and enter into the folder.
 
 The command to launch the process is the following:
 
