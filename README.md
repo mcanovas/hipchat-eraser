@@ -26,4 +26,17 @@ Where:
  	* Login to hipchat.
  	* Get the part of the address of the host. For instance, if the url is **https://google.hipchat.com/history/member**, the right host is **google.hipchat.com**
 
+ * **\<hipchat-username\>**: The Hipchar username what is going to delete the messages with.
+
+ * **\<hipchat-password\>**: The password of the previous username.
+
+ * **\<the-other-user-hipchat-id\>**: As the messages to delete are in the 1-1 conversation, the messages which will delete are the ones written by the user whose username and password has been provided, and the other user has to be specified by this property.
+
+ The **id** id the *hipchat id* and could be got doing following steps:
+
+ 	* Login into Hipchar
+ 	* Click on **People Tab**
+ 	* From the list below select the user to see the 1-1 conversation.
+ 	* Looking the web address, take the last number in the url. if the url is *https://www.hipchat.com/people/show/768573* the user id is *768573*.
+
  * **\<final-date-to-delete\>**: **Hipchat Eraser** deletes the messages from today until the date provided in this parameter. It **MUST** be written in a specific format (**yyyy-MM-dd**). For instance: 2015-12-24
