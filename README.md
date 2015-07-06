@@ -1,14 +1,14 @@
 # Hipchat Eraser
 
-This is a script done in CasperJs which deletes the 1-1 hipchat messages between the user who is log in and the user id provided. The period of time to delete message is from the today to the date provided.
+This is a script done in CasperJs which deletes the 1-1 hipchat messages between the user who is log in and the user id provided. The period of time to delete message is from today to the date provided.
 
 ## Download
 
-[Hipchat Eraser 1.0.1](https://github.com/mcanovas/hipchat-eraser/archive/1.0.1.zip)
+[Hipchat Eraser 1.0.2](https://github.com/mcanovas/hipchat-eraser/archive/1.0.2.zip)
 
 ## Dependencies
 
-The start.sh script uses **nmp**. It is important to install this executable before use **hipchar-eraser**. Phantomjs will be installed globally using 'npm' automatically.
+The start.sh script uses **npm**. It is important to install this executable before use **hipchar-eraser**. Phantomjs will be installed globally using **npm** automatically.
 
 The source code is done using CasperJS which is a wrapper of PhantomJS. That's why is important to install PhantomJS with **npm**.
 
@@ -36,7 +36,7 @@ Where:
 
  The **id** id the *hipchat id* and could be got doing following steps:
 
- 	* Login into Hipchar
+ 	* Login into Hipchat
  	* Click on **People Tab**
  	* From the list below select the user to see the 1-1 conversation.
  	* Looking the web address, take the last number in the url. if the url is *https://www.hipchat.com/people/show/768573* the user id is *768573*.
