@@ -14,6 +14,9 @@ var host = casper.cli.get(0);
 
 var currentUrl = 0;
 
+var pages = 0;
+var currentPage = -1;
+
 var urls = [];
 
 var running = false;
@@ -51,7 +54,7 @@ var datesEquals = function (date1, date2) {
 		return true;
 	}
 	return false;
-}
+};
 
 function generateHistory() {
 	this.echo("Generating history");
@@ -89,6 +92,19 @@ function deleteMessage (messagesURL) {
 	return left;
 };
 
+function checkPages() {
+	var pages = this.evaluate(function() {
+		var result = 0;
+		var numbers = document.querySelectorAll('.aui-nav-pagination li a');
+		if (numbers.length > 0) {
+			var last = numbers[numbers.length - 3];
+			var result = last.innerHTML.trim();
+		}
+		return result;
+	});
+	return pages;
+};
+
 function check() {
 	if (urls.length == 0) {
 		generateHistory.call(this);
@@ -96,13 +112,31 @@ function check() {
 	if (urls[currentUrl]) {
 		this.waitFor(function check() {
 			this.echo("Opening History: " + urls[currentUrl]);
-			return this.open(urls[currentUrl]);
+			var cu = urls[currentUrl];
+			if (currentPage > 1) {
+				cu = cu + "?p=" + currentPage;
+			}
+			return this.open(cu);
 		}, function then() {
 			this.echo("Processing History: " + urls[currentUrl]);
+
+			if (currentPage === -1) { 
+				pages = checkPages.call(this);
+				this.echo("Pages: " + pages);
+				currentPage = 1;
+			}
+			
 			var left = deleteMessage.call(this, urls[currentUrl]);
+			this.echo("Current Page: " + currentPage);
 			this.echo("Messages: " + left);
-			if (left == 0) {
+			if (left === 0 && currentPage <= pages) {
+				currentPage++;
+			}
+
+			if (left === 0 && currentPage > pages) {
+				currentPage = -1;				
 				currentUrl++;
+				this.echo("Going to the next DAY.");
 			}
 			this.run(check);
 		});
